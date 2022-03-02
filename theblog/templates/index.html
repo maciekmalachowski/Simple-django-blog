@@ -1,0 +1,14 @@
+<STYLE>A {text-decoration: none;} </STYLE>
+<!-- {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> -->
+
+<h1>Posts:</h1>
+
+<ul>
+{% for post in object_list %}
+    <li><h3><a href = "{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3></li>
+{% endfor %}
+</ul>
+
+<p><h3><a href = "{% url 'add_post' %}">➕ Add your post</p>

@@ -1,0 +1,8 @@
+<STYLE>A {text-decoration: none;} </STYLE>
+
+<h1>{{ post.title }}</h1>
+<h3>By: {{ post.author.first_name }} {{ post.author.last_name }}</h3>
+<hr>
+{{ post.text }}
+<hr>
+<p><button><a href="{% url 'index' %}">Back</a></button></p>

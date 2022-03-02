@@ -1,0 +1,11 @@
+<STYLE>A {text-decoration: none;} </STYLE>
+
+<h1>Add blog post</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Post</button>
+</form>
+
+<p><button><a href="{% url 'index' %}">Back</a></button></p>

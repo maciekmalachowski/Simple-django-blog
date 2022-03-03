@@ -1,14 +1,24 @@
-<STYLE>A {text-decoration: none;} </STYLE>
-<!-- {% load static %}
+{% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-<h1>Posts:</h1>
-
+<h1>Home:</h1>
 <ul>
-{% for post in object_list %}
-    <li><h3><a href = "{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3></li>
-{% endfor %}
+    {% if user.is_authenticated %}
+        <h3><li><a href = "{% url 'logout' %}">Logout</a></li></h3>
+        <h3><li><a href = "{% url 'add_post' %}">➕ Add your post</a></li></h3>
+
+    {% else %}
+        <h3><li><a href = "{% url 'login' %}">Login</a></li></h3>
+        <h3><li><a href = "{% url 'register' %}">Register</a></li></h3>
+    {% endif %}
+        <br>
+    <li><h2>Posts:</h2>
+        <ul>
+        {% for post in object_list %}
+            <li><h4><a href = "{% url 'post_detail' post.pk %}">{{ post.title }}</a></h4></li>
+        {% endfor %}
+        </ul>
+    </li>
 </ul>
 
-<p><h3><a href = "{% url 'add_post' %}">➕ Add your post</p>

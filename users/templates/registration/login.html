@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+<h1>LOGIN</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Login</button>
+</form>
+
+<p><button><a href="{% url 'index' %}">Back</a></button></p>

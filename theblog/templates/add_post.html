@@ -1,11 +1,21 @@
-<STYLE>A {text-decoration: none;} </STYLE>
+{% load static %}
 
-<h1>Add blog post</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Post</button>
-</form>
+{% if user.is_authenticated %}
+    <h1>Add blog post</h1>
 
-<p><button><a href="{% url 'index' %}">Back</a></button></p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Post</button>
+    </form>
+
+    <p><button><a href="{% url 'index' %}">Back</a></button></p>
+{% else %}
+    <h1>You are not logged in.</h1>
+    <h3><li><a href = "{% url 'login' %}">Login</a></li></h3>
+    <h3><li><a href = "{% url 'register' %}">Register</a></li></h3>
+    <p><button><a href="{% url 'index' %}">Home page</a></button></p>
+
+{% endif %}

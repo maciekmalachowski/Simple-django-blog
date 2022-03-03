@@ -1,7 +1,19 @@
-li a {
-    color: green;
+body
+{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+li a 
+{
     text-decoration: none;
 }
-body{
-    background-color: red;
+
+button
+{
+    cursor: pointer;
+    height: 40px;
+    width: 65px;
+    border: 2px darkgray solid;
+    border-radius: 10px;
 }

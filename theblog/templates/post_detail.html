@@ -1,7 +1,13 @@
-<STYLE>A {text-decoration: none;} </STYLE>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
 <h1>{{ post.title }}</h1>
-<h3>By: {{ post.author.first_name }} {{ post.author.last_name }}</h3>
+{% if post.author.first_name == '' %}
+    <h3>By: {{ post.author }}</h3>
+{% else %}
+    <h3>By: {{ post.author.first_name }} {{ post.author.last_name }}</h3>
+{% endif %}
 <hr>
 {{ post.text }}
 <hr>

@@ -1,3 +1,6 @@
 # Simple-django-blog
 --------
-This is a ``Django blog`` with user authentication, displaying and adding posts.
+This is a ``Django blog`` with 
+- User authentication
+- Displaying posts 
+- Adding posts.

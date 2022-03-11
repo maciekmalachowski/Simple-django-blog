@@ -1,4 +1,4 @@
-# Simple-django-blog
+# Simple-django-blog📖
 --------
 This is a ``Django blog`` with 
 - 👦User authentication
